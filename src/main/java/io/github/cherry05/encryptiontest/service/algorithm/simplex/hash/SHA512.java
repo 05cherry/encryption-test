@@ -49,10 +49,6 @@ public class SHA512 implements EncryptionAlgorithm {
         return HexFormat.of().formatHex(hashedBytes);
     }
 
-    @Override
-    public String decrypt(String text) {
-        throw new UnsupportedOperationException("SHA-256 is a one-way hash function and cannot be decrypted.");
-    }
 
     /*
      * DatatypeConverter 사용
