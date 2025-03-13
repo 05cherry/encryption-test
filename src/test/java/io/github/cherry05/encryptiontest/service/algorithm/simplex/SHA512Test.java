@@ -6,13 +6,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.security.NoSuchAlgorithmException;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @Slf4j
 @SpringBootTest
-public class SHA256Test {
+public class SHA512Test {
 
     @Autowired
     private SHA256 sha256;

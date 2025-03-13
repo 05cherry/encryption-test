@@ -25,11 +25,25 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
-	compileOnly("org.projectlombok:lombok")
-	developmentOnly("org.springframework.boot:spring-boot-devtools")
-	annotationProcessor("org.projectlombok:lombok")
+	implementation("org.slf4j:slf4j-api")
+	implementation("ch.qos.logback:logback-classic")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.slf4j:slf4j-api")
+	testImplementation("ch.qos.logback:logback-classic")
+
+	testImplementation("org.mockito:mockito-core:5.7.0")
+	testImplementation("org.mockito:mockito-inline:5.7.0") // ✅ mockito-inline 추가
+
+	compileOnly("org.projectlombok:lombok")
+	annotationProcessor("org.projectlombok:lombok")
+
+	testCompileOnly("org.projectlombok:lombok")
+	testAnnotationProcessor("org.projectlombok:lombok")
+
+	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
 }
 
 tasks.withType<Test> {

@@ -1,6 +1,6 @@
 package io.github.cherry05.encryptiontest.service.algorithm.simplex.hash;
 
-import io.github.cherry05.encryptiontest.service.algorithm.simplex.OneWayAlgorithm;
+import io.github.cherry05.encryptiontest.service.algorithm.EncryptionAlgorithm;
 import org.springframework.stereotype.Component;
 
 import java.security.MessageDigest;
@@ -8,14 +8,14 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HexFormat;
 
 @Component
-public class SHA256 implements OneWayAlgorithm {
+public class SHA512 implements EncryptionAlgorithm {
 
     /**
      * @param text 해싱할 문자열
      * @return 해싱된 문자열을 16진수로 변환한 문자열
      */
     @Override
-    public String hash(String text) {
+    public String encrypt(String text) {
         MessageDigest digest = null;
         try {
             digest = MessageDigest.getInstance("SHA-256");
@@ -47,6 +47,11 @@ public class SHA256 implements OneWayAlgorithm {
      */
     private String bytesToHex_1(byte[] hashedBytes){
         return HexFormat.of().formatHex(hashedBytes);
+    }
+
+    @Override
+    public String decrypt(String text) {
+        throw new UnsupportedOperationException("SHA-256 is a one-way hash function and cannot be decrypted.");
     }
 
     /*

@@ -1,4 +1,4 @@
-package io.github.cherry05.encryptiontest.util;
+package io.github.cherry05.encryptiontest.service.util;
 
 /**
  * @implNote 이미지나 첨부파일 등 이진데이터를 전송해야 할 때 많이 사용된다.
